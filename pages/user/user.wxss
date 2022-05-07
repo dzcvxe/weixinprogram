@@ -1,0 +1,12 @@
+/* pages/my/my.wxss */.view_saoyisao {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  align-items: center;
+}
+
+.image_saoyisao {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
