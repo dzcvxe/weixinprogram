@@ -1,0 +1,29 @@
+<view class="v1">
+  <image class='background' src="/picture/bg.jpg" mode="aspectFill"></image>
+   <view class="v2">
+     <view class="dltext">登录</view>
+     <view class="phoneCs">
+       <image src="/icons/my.png" class="ph"></image>
+       <input placeholder="请d输入账号" bindinput="content" />
+     </view>
+     <view class=passwordCs">
+       <image src="/icons/code.png" class="ps"></image>
+       <input placeholder="请输入密码" bindinput="password" type="text" password="{{!open}}" bindfocus="focus" bindblur="blur"  class="{{focus?'ative':''}}"/>
+       <image src="{{open?'/icons/eyeopen.png':'/icons/eyeclose.png'}}" class="eye" catchtap="switch" />
+     </view>
+     <view class="zhuce">
+       <navigator url="/pages/register/register" open-type="navigate">立即注册</navigator>
+       <navigator url="/pages/getcode/getcode" open-type="navigate">忘记密码?</navigator>
+     </view>
+     <view class="denglu">
+       <button class="btn-dl" type="primary" bindtap="goadmin">登录</button>
+     </view>
+     <view class="xieyi">
+       <checkbox class="isXY" bindtap="goxieyi"></checkbox>
+       <view class="text-xy">同意小程序的《平台协议》</view>
+     </view>
+   </view>
+</view>
+
+  
+

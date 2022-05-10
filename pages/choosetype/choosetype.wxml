@@ -1,0 +1,23 @@
+<!--pages/choosetype/choosetype.wxml-->
+<view class="whole">
+<navigator url="/pages/login/login" open-type="navigate">
+  <view class="first">
+  <view class="tot" data-type='1' bindtap="fun">
+    <image class="student" src="/icons/student.png"/>
+    <view class="txt">我是学生</view>
+  </view>
+  </view>
+  <view class="second">
+    <view class="tot" data-type='2' bindtap="fun">
+    <image class="teacher" src="/icons/teacher.png"/>
+    <view class="txt">我是老师</view>
+    </view>
+  </view>
+  <view class="third">
+    <view class="tot" data-type='3' bindtap="fun">
+    <image class="supervisor" src="/icons/supervisor.png"/>
+    <view class="txt">我是管理员</view>
+    </view>
+  </view>
+</navigator>
+</view>

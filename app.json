@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/choosetype/choosetype",
+    "pages/login/login",
     "pages/index/index",
     "pages/transaction/transaction",
     "pages/user/user",
@@ -10,7 +12,10 @@
     "pages/forum/forum",
     "pages/map/map",
     "pages/calendar/calendar",
-    "pages/search_/search_"
+    "pages/search_/search_",
+    "pages/register/register",
+    "pages/getcode/getcode"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
