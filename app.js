@@ -1,7 +1,8 @@
 App({
   
   globalData:{
-    type:0
+    type:0,
+    userIm:{}
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）

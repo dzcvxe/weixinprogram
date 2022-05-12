@@ -1,10 +1,11 @@
 {
   "pages":[
+    "pages/authorize/authorize",
     "pages/choosetype/choosetype",
+    "pages/user/user",
     "pages/login/login",
     "pages/index/index",
     "pages/transaction/transaction",
-    "pages/user/user",
     "pages/grade/grade",
     "pages/test/test",
     "pages/curriculum/curriculum",

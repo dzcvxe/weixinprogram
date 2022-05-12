@@ -1,117 +1,80 @@
-page {
-  background-color: #edece8;
+.head-height {
+  height: 240rpx;
 }
-.user_info_wrap {
-  height: 45vh;
-  overflow: hidden;
-  background-color: var(--themeColor);
-  position: relative;
+
+.head {
+  display:flex;
+  width: 100%;
+  background-color: #15c261;
+  align-items: center;
 }
-.user_info_wrap .user_img_wrap {
-  position: relative;
+
+.login-button {
+  opacity: 0; 
+  width: 100%;
+  position: fixed;
 }
-.user_info_wrap .user_img_wrap .user_bg {
-  height: 50vh;
-  filter: blur(10rpx);
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: fixed;
 }
-.user_info_wrap .user_img_wrap .user_info {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20%;
-  text-align: center;
-}
-.user_info_wrap .user_img_wrap .user_info .user_icon {
+
+.userinfo-avatar {
   width: 150rpx;
   height: 150rpx;
+  margin: 30rpx;
   border-radius: 50%;
 }
-.user_info_wrap .user_img_wrap .user_info .user_name {
-  color: #fff;
-  margin-top: 40rpx;
+
+.userinfo-nickname {
+  color: #333333;
+  font-size: 42rpx;
 }
-.user_btn{
-  height:150rpx;
-  width:500rpx;
-  background-color:  rgb(29,144,255);
+.list-wrapper {
+  width: 100%;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.div-line{
+  background: #E0E3DA;
+  width: 100%;
+  height: 3rpx;
+}
+
+.list-item {
+  width: 100%;
+  height: 120rpx;
+}
+
+.list-item_active {
+  background-color: #E0E3DA;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  display: flex;
-  justify-content: center; 
+  height: 120rpx;
 }
-.user_info_wrap .user_btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 40%;
-  border: 1rpx solid rgb(29,144,255);
-  color:white;
+.item-text {
+  position: fixed;
+  left: 100rpx;
   font-size: 38rpx;
-  padding: 30rpx;
-  border-radius: 10rpx;
 }
-.user_content {
-  position: relative;
+.item-array {
+  position: fixed;
+  right: 50rpx;
+  font-size: 38rpx;
 }
-.user_content .user_main {
-  padding-bottom: 100rpx;
-  color: #666;
-  position: absolute;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -40rpx;
-}
-.user_content .user_main .history_wrap {
-  background-color: #fff;
-  display: flex;
-}
-.user_content .user_main .history_wrap navigator {
-  flex: 1;
-  text-align: center;
-  padding: 10rpx 0;
-}
-.user_content .user_main .history_wrap navigator .his_num {
-  color: var(--themeColor);
-}
-.user_content .user_main .orders_wrap {
-  background-color: #fff;
-  margin-top: 30rpx;
-}
-.user_content .user_main .orders_wrap .orders_title {
-  padding: 20rpx;
-  border-bottom: 1rpx solid #ccc;
-}
-.user_content .user_main .orders_wrap .order_content {
-  display: flex;
-}
-.user_content .user_main .orders_wrap .order_content navigator {
-  padding: 15rpx 0;
-  flex: 1;
-  text-align: center;
-}
-.user_content .user_main .orders_wrap .order_content navigator .iconfont {
-  color: var(--themeColor);
-  font-size: 40rpx;
-}
-.user_content .user_main .address_wrap {
-  margin-top: 30rpx;
-  background-color: #fff;
-  padding: 20rpx ;
-}
-.user_content .user_main .app_info_wrap {
-  margin-top: 30rpx;
-  background-color: #fff;
-}
-.user_content .user_main .app_info_wrap .app_info_item {
-  padding: 20rpx ;
-  border-bottom: 1rpx solid #ccc;
-}
-.user_content .user_main .app_info_wrap .app_info_contact {
-  display: flex;
-  justify-content: space-between;
-}
-.user_content .user_main .recommend_wrap {
-  margin-top: 30rpx;
-  background-color: #fff;
-  padding: 20rpx ;
+
+.item-image {
+  position: fixed;
+  left: 20rpx;
+  width: 70rpx;
+  height: 70rpx;
 }

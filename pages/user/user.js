@@ -1,15 +1,31 @@
-// pages/user/index.js
+//获取应用实例
+const app = getApp();
+
 Page({
+  /**
+   * 页面的初始数据
+   */
+    /**
+   * 页面的初始数据
+   */
   data: {
-    userinfo:{},
-    // 被收藏的商品的数量
-    collectNums:0
+    img: '',
+    name: '',
+    menuitems: [
+      { text: '我的信息', url: '../userinfo/userinfo', icon: '/icons/myinfo.png', tips: '' },
+      { text: '关于我们', url: '../userinfo/userinfo', icon: '/icons/aboutus.png', tips: '' },
+      { text: '意见反馈', url: '../userinfo/userinfo', icon: '/icons/feedback.png', tips: '' },
+      { text: '检查更新', url: '../userinfo/userinfo', icon: '/icons/update.png', tips: '' }
+    ]
   },
-  onShow(){
-    const userinfo=wx.getStorageSync("userinfo");
-    const collect=wx.getStorageSync("collect")||[];
-      
-    this.setData({userinfo,collectNums:collect.length});
-      
-  }
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      img:app.globalData.userIm.userInfo.avatarUrl,
+      name:app.globalData.userIm.userInfo.nickName
+    })
+  },
 })

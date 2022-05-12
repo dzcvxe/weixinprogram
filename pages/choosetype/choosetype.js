@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type:0
+    type:0,
   },
   fun:function(e){
     app.globalData.type=e.currentTarget.dataset.type;
    },
    
+
   /**
    * 生命周期函数--监听页面加载
    */
