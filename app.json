@@ -9,10 +9,10 @@
     "pages/grade/grade",
     "pages/test/test",
     "pages/curriculum/curriculum",
+    "pages/calendar/calendar",
     "pages/comment/comment",
     "pages/forum/forum",
     "pages/map/map",
-    "pages/calendar/calendar",
     "pages/search_/search_",
     "pages/register/register",
     "pages/getcode/getcode"

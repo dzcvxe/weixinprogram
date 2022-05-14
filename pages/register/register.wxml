@@ -1,10 +1,10 @@
 <view class="v1">
-  <image class='background' src="/picture/bg.jpg" mode="aspectFill"></image>
+  <image class='background' src="/picture/bg.jpg" mode="scaleToFill"></image>
    <view class="v2">
      <view class="dltext">注册</view>
      <view class="phoneCs">
        <image src="/icons/my.png" class="ph"></image>
-       <input placeholder="请d输入账号" bindinput="content" />
+       <input placeholder="请输入账号" bindinput="content" />
      </view>
      <view class=passwordCs">
        <image src="/icons/code.png" class="ps"></image>
