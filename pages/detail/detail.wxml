@@ -1,0 +1,78 @@
+<!-- detail -->
+<page class="page detail">
+  <view class="detail-post-meta">
+    <view class="detail-post-avatar">
+      <image class="detail-post-avatar-img" mode="scaleToFill" src="{{detail[0].headurl}}" />
+    </view>
+    <view class="detail-post-info">
+      <view class="detail-post-author-name">
+        <text>{{detail[0].nickname}}</text>
+        <view class="detail-type-item"  wx:if="{{detail[0].hot === true}}">
+          <view class="detail-type-item-font">#热门#</view>
+        </view>
+      </view>
+      <view class="detail-post-time">楼主 发表于{{detail[0].time}}</view>
+    </view>
+    <view class="detail-collect-item" id="{{detail[0].id}}" catchtap="collect" wx:if="{{detail.is_collect == true}}">取消收藏</view>
+    <view class="detail-collect-item" id="{{detail[0].id}}" catchtap="collect" wx:if="{{detail.is_collect == false}}">收藏</view>
+  </view>
+  <view class="detail-post-header">
+    <view class="detail-post-title">
+      <view class="detail-posts-tag hot" wx:if="{{detail[0].top === true}}">置顶</view>
+      <view class="detail-posts-tag" wx:if="{{detail[0].good === true}}">精华</view>
+      {{ detail[0].title }}
+    </view>
+  </view>
+  <view class="detail-post-content">
+    <text class="content-info">{{ detail[0].content }}</text>
+  </view>
+
+  <view class="detail-post-img">
+    <block wx:for="{{imgUrl.length}}" wx:key="key">
+      <image class="img-info" src="{{imgUrl[index]}}" mode="widthFix" style="width:750rpx; margin-top: 20rpx;"bindtap='clickimage' data-index="{{index}}"></image>
+    </block>
+  </view>
+  <view class="detail-post-comment">
+    <view class="detail-post-comment-title">评论</view>
+    <view class="detail-post-comment-list">
+      <block wx:for="{{detail[0].replies}}" wx:if="{{detail[0].replies.length > 0}}">
+        <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+          <view class="detail-post-comment-avatar">
+            <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{item.headurl}}"></image>
+          </view>
+          <view class="detail-post-comment-cell">
+            <view class="detail-post-comment-info">
+              <view class="detail-post-comment-info-cell">
+                <view class="detail-post-comment-author-name">{{item.nickname}}</view>
+                <view class="detail-post-comment-time">{{index+2}}楼 发表于{{item.time}}</view>
+              </view>
+              <view class="detail-post-comment-info-cell" style="text-align:right" id="{{item.id}}" data-index="{{index}}" catchtap="reply">
+                <image class="detail-post-zan" mode="scaleToFill" src="/icons/zan.png"></image>
+                <text class="detail-post-zan-num" wx:if="{{item.zanNum>0}}">{{item.zanNum}}</text>
+              </view>
+            </view>
+            <view class="detail-comment-content">
+              <text class="detail-comment-text">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{detail[0].replies.length<0}}">
+        <view class="detail-post-comment-null">
+          <text class="textnull">暂无收录评论 </text>
+        </view>
+      </block>
+      <form bindsubmit="formSubmit" style="position:fixed;bottom:0;">
+      <view class='buttom'>
+        <view class='inp'>
+            <input placeholder="写评论..." name="userName" value="{{replyValue}}" cursor-spacing="20" bindinput="getReply"></input>
+        </view>
+        <button form-type="reset" bindtap='upload'>
+          <text class='fb'>发表</text>
+        </button>
+        </view>
+       </form>
+    </view>
+  </view>
+</page>
+

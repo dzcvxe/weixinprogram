@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/authorize/authorize",
+    "pages/forum/forum",
+    "pages/curriculum/curriculum",
     "pages/choosetype/choosetype",
     "pages/user/user",
     "pages/login/login",
@@ -8,15 +10,15 @@
     "pages/transaction/transaction",
     "pages/grade/grade",
     "pages/test/test",
-    "pages/curriculum/curriculum",
     "pages/calendar/calendar",
     "pages/comment/comment",
-    "pages/forum/forum",
     "pages/map/map",
     "pages/search_/search_",
     "pages/register/register",
-    "pages/getcode/getcode"
-
+    "pages/getcode/getcode",
+    "pages/detail/detail",
+    "pages/submitblog/submitblog",
+    "pages/tmp/tmp"
   ],
   "window":{
     "backgroundTextStyle":"light",
