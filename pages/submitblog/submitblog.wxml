@@ -1,12 +1,11 @@
 <view class="title">
   <view class="title_right"><input value="{{value1}}" type="text" name='name' maxlength='100' placeholder='输入标题' bindinput="getTitle"/></view>
-  </view>
+</view>
 <view class='head_view'>
   <view class="text_view">
     <textarea placeholder="请填写话题内容 (不少于2个字)" auto-focus maxlength="200" auto-focus="{{false}}" bindinput="getInput"/>
   </view>
 </view>
-
 <view class='main_view'>
  <view class="three_view">
   <view>

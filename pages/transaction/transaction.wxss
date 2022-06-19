@@ -1,1 +1,51 @@
-/* pages/transaction/transaction.wxss */
+.img_item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.outter{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10rpx;
+}
+.litem{
+  width:18%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius:10rpx;
+  margin-top:15rpx;
+  text-align: center;
+  z-index: 999;
+}
+.litem:not(:nth-child(5n)){
+  margin-right: 2%;
+}
+.innerimg{
+  height:100rpx;
+  width: 100rpx;
+}
+.slitem{
+
+}
+.line {
+  width: 95%;
+  height: 10rpx;
+  background: #2066ff;
+  border-radius: 5rpx;
+}
+.itemss{
+  width:375rpx;
+}
+.txt1{
+  font-weight: 800;
+  color: black;
+}
+.txt2{
+  color:red;
+  font-weight: 800;
+}

@@ -1,2 +1,58 @@
 <!--pages/transaction/transaction.wxml-->
 <search></search>
+<view class="outter">
+    <view class="litem" data-num="1" bindtap="func">
+        <image src="/icons/others.png" class="innerimg"/>
+        <text>全部物品</text>
+        <view class='line' wx:if="{{activeIndex==1}}"></view>
+    </view>
+    <view class="litem" data-num="2" bindtap="func">
+        <image src="/icons/books.png" class="innerimg"/>
+        <text>二手图书</text>
+        <view class='line' wx:if="{{activeIndex==2}}"></view>
+    </view>
+    <view class="litem" data-num="3" bindtap="func">
+        <image src="/icons/camera.png" class="innerimg"/>
+        <text>家电数码</text>
+        <view class='line' wx:if="{{activeIndex==3}}"></view>
+    </view>
+    <view class="litem" data-num="4" bindtap="func">
+        <image src="/icons/daily.png" class="innerimg"/>
+        <text>日常用品</text>
+        <view class='line' wx:if="{{activeIndex==4}}"></view>
+    </view>
+    <view class="litem" bindtap="jump">
+        <image src="/icons/put.png" class="innerimg"/>
+        <text>发布商品</text>
+    </view>
+</view>
+<view style="display:none">
+  <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.imgurl}}" bindload="onImageLoad"></image>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+  <view style="width:100%">
+    <view class="img_item">
+      <navigator wx:for="{{col1}}" wx:key="id" url="/pages/goodsdetail/goodsdetail?id={{item._id}}" wx:if="{{activeIndex==1||item.type==activeIndex-2}}">
+        <view class="itemss">
+          <image src="{{item.imgurl}}" style="width:100%;height:{{item.height}}px"></image>
+          <text class="txt1">{{item.title}}
+          </text>
+          <text class="txt2">¥{{item.price}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="img_item">
+      <navigator wx:for="{{col2}}" wx:key="id" url="/pages/goodsdetail/goodsdetail?id={{item._id}}" wx:if="{{activeIndex==1||item.type==activeIndex-2}}">
+        <view class="itemss">
+          <image src="{{item.imgurl}}" style="width:100%;height:{{item.height}}px"></image>
+          <text class="txt1">{{item.title}}
+          </text>
+          <text class="txt2">¥{{item.price}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</scroll-view>
+
+
+

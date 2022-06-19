@@ -1,15 +1,16 @@
 const app = getApp()
 var util = require('../../utils/util.js');
 Page({
-  data:{
-    index: 0,
+  data: {
     number: 1,
-    PostType:'',
-    avatarUrl: '',
-    user_openid: '',
-    telValue: "",
+    PostType: '',
     titleValue: "",
-    UserInfo:'',
+    telValue: "",
+    UserInfo: '',
+    Price : 0,
+    array:["二手图书","家电数码","日常用品","其它"],
+    type:0,
+    index:0,
     Filepath:[]
   },
   getTitle: function(e){
@@ -18,14 +19,20 @@ Page({
       titleValue: e.detail.value
     })
   },
-  getInput: function (e) {
+  getInput: function (e){
     this.setData({
       telValue: e.detail.value
     })
   },
+  getPriceinput:function(e){
+    this.setData({
+      Price: e.detail.value
+    })
+  },
   bindPickerChange: function (e) {
     this.setData({
-      index: e.detail.value
+      type:e.detail.value,
+      index:e.detail.value
     })
   },
   clickimage: function (e) {
@@ -54,7 +61,7 @@ Page({
   deleteImage: function (e) {
     var that = this
     var index = e.target.dataset.index
-    console.log("+++++++++", index)
+
     var tempFilePaths = that.data.Filepath
     wx.showModal({
       title: '提示',
@@ -95,18 +102,20 @@ Page({
           return res.fileID
         });
       }).then(res => {
-        const _id=app.globalData.openid
-        return  wx.cloud.database().collection('blogs').add({ 
+        return  wx.cloud.database().collection('goods').add({ 
               data: {
                 title:that.data.titleValue,
                 content: that.data.telValue,
-                nickname:app.globalData.userIm.userInfo.nickName,
-                headurl:app.globalData.userIm.userInfo.avatarUrl,
-                clicktimes:0,
+                //nickname:app.globalData.userIm.userInfo.nickName,
+                //headurl:app.globalData.userIm.userInfo.avatarUrl,
+                nickname:"韡",
+                headurl:"https://thirdwx.qlogo.cn/mmopen/vi_32/T5ib25P58AoTDx0p2Kg2Iiar1ibde2RMNObQjz52icpX5bpria3e76kFJCzibKicn4trzCqqUs7AI0cWiaSzsRY6rDdWUg/132",
                 time: util.formatTime(new Date()),
-                top:false,
+                type:Number(this.data.type),
+                price:Number(this.data.Price),
                 hot:false,
-                imgid:ids
+                imgid:ids,
+                judge:[]
               }
             }).then(res => {
             wx.hideLoading();
@@ -116,8 +125,8 @@ Page({
               duration: 1000,
               success: function () {
                 console.log(res)
-                wx.navigateTo({
-                  url: '/pages/forum/forum',
+                wx.switchTab({
+                  url: '/pages/transaction/transaction',
                 })
               }
             })
@@ -127,18 +136,18 @@ Page({
       })
       }
       else{    
-        const _id = app.globalData.openid
-        return  wx.cloud.database().collection('blogs').add({ 
+        return  wx.cloud.database().collection('goods').add({ 
           data: {
             title:that.data.titleValue,
             content: that.data.telValue,
             nickname:app.globalData.userIm.userInfo.nickName,
             headurl:app.globalData.userIm.userInfo.avatarUrl,
-            clicktimes:0,
             time: util.formatTime(new Date()),
-            top:false,
+            type:Number(this.data.type),
+            price:Number(this.data.Price),
             hot:false,
-            imgid:ids
+            imgid:ids,
+            judge:[]
           }
         }).then(res => {
           wx.hideLoading();
@@ -148,8 +157,8 @@ Page({
             duration: 1000,
             success: function () {
               console.log(res)
-              wx.navigateTo({
-                url: '/pages/forum/forum',
+              wx.switchTab({
+                url: '/pages/transaction/transaction',
               })
             }
           })
@@ -167,7 +176,7 @@ Page({
   },
   /**
    * 生命周期函数--监听页面加载
-  */
+   */
   onLoad: function (options) {
     
   },
