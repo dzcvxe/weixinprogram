@@ -80,6 +80,7 @@ Page({
                     duration: 2500
                   })
                   flag=true;
+                  app.globalData.idnumber=username;
                   wx.getUserProfile({//desc：必须写不写会不弹出弹框
                     desc: '用于授权', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
                     success:(res)=>{//建议使用es6箭头函数避免this指向问题

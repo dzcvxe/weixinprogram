@@ -1,14 +1,15 @@
 {
   "pages":[
     "pages/authorize/authorize",
+    "pages/index/index",
+    "pages/grade/grade",
+    "pages/gradedetail/gradedetail",
     "pages/transaction/transaction",
     "pages/forum/forum",
     "pages/curriculum/curriculum",
     "pages/choosetype/choosetype",
     "pages/user/user",
     "pages/login/login",
-    "pages/index/index",
-    "pages/grade/grade",
     "pages/test/test",
     "pages/calendar/calendar",
     "pages/comment/comment",
@@ -21,7 +22,8 @@
     "pages/tmp/tmp",
     "pages/submitgoods/submitgoods",
     "pages/goodsdetail/goodsdetail",
-    "pages/buy/buy"
+    "pages/buy/buy",
+    "pages/aboutus/aboutus"
   ],
   "window":{
     "backgroundTextStyle":"light",

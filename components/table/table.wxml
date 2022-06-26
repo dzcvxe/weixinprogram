@@ -1,0 +1,18 @@
+<template name="tableTemp">
+    <scroll-view class="table-wrap" scroll-x="{{true}}">
+<view>
+    <view class="table">
+        <view class="tr">
+            <block wx:for="{{title}}" wx:key="{{index}}">
+            <view class="th left">{{item}}</view>
+            </block>
+        </view>
+        <view class="tr" wx:for="{{contentItem}}" wx:key="index">
+            <block wx:for="{{item}}" wx:key="index">
+                <view class="td left">{{item}}</view>
+            </block>
+        </view>
+    </view>
+</view>
+    </scroll-view>
+</template>

@@ -1,0 +1,41 @@
+#aboutusView > image{
+  width: 670rpx;
+  height: 670rpx;
+  margin-bottom: 40rpx;
+}
+
+#aboutusView{
+  padding: 0 40rpx;
+}
+
+.aboutusItemView{
+  padding-bottom: 30rpx;
+}
+
+
+.aboutusItemView > view:nth-child(1){
+  font-size: 40rpx;
+  color: #87cefa;
+  padding-bottom: 20rpx;
+}
+
+.aboutusItemView > view:nth-child(2){
+  font-size: 30rpx;
+  color: #888;
+}
+.aboutusItemView > view:nth-child(3){
+  font-size: 30rpx;
+  color: #888;
+}
+.aboutusItemView > view:nth-child(4){
+  font-size: 30rpx;
+  color: #888;
+}
+.aboutusItemView > view:nth-child(5){
+  font-size: 30rpx;
+  color: #888;
+}
+.aboutusItemView > view:nth-child(6){
+  font-size: 30rpx;
+  color: #888;
+}

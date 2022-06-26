@@ -1,2 +1,25 @@
 <!--pages/grade/grade.wxml-->
-<text>pages/grade/grade.wxml</text>
+<view class="vtxt">
+  <text class="txt">成绩查询</text>
+</view>
+<view style="margin-top: 90rpx;">
+  <button class="btn" bindtap="out" type="primary" style="width:170rpx;height:80rpx;margin-left:570rpx;">导出</button>
+</view>
+<view class="query">
+  <view class='sort1'>
+      <view class='vw_sort'><text>学年:</text></view>
+      <picker class='vw_pay' bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+        <view class="picker">当前选择：{{array1[index1]}}</view>
+      </picker>
+  </view>
+  <view class='sort'>
+      <view class='vw_sort'><text>学期:</text></view>
+      <picker class='vw_pay' bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+        <view class="picker">当前选择：{{array2[index2]}}</view>
+      </picker>
+  </view>
+</view>
+<view class="intr">
+<text style="font-size: medium;color: red;margin-left:65rpx;">不合格的用红色标识，通过补考或重修及格的用蓝色标识。</text>
+<button class="btn" bindtap="query" type="primary" style="width:170rpx;height:80rpx;margin-left:570rpx;background-color: blue;">查询</button>
+</view>

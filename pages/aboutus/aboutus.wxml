@@ -1,0 +1,26 @@
+<!--pages/aboutus/aboutus.wxml-->
+
+<!-- 信息区域 -->
+<view id="aboutusView">
+  <image src="/picture/bjut.jpg"></image>
+  <view class="aboutusItemView">
+    <view>小程序名称</view>
+    <view>北工大校园助手</view>
+  </view>
+  <view class="aboutusItemView">
+    <view>小组成员</view>
+    <view>19090326张艺伟</view>
+    <view>19026213许希希</view>
+    <view>19053207刘方泽</view>
+    <view>19074512郝一辰</view>
+    <view>18074119唐晋成</view>
+  </view>
+
+  <view class="aboutusItemView">
+    <view>小程序简介</view>
+    <view>这是软件工程课设的作业。</view>
+    <view>北工大校园助手是一个以查成绩为主的多功能整合软件，用户群体包括学生、教师和管理员。</view>
+  </view>
+</view>
+
+
