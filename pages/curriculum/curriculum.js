@@ -1,4 +1,5 @@
 // pages/curriculum/curriculum.js
+const app=getApp()
 Page({
 
   /**
@@ -7,18 +8,7 @@ Page({
   data: {
     colorArrays: [ "#85B8CF", "#90C652", "#D8AA5A", "#FC9F9D", "#0A9A84", "#61BC69", "#12AEF3", "#E29AAD"],
     wlist: [
-      { "day": 1, "start": 1, "duration": 3, "cname": "高等数学@教A-301" },
-      { "day": 1, "start": 5, "duration": 3, "cname": "高等数学@教A-301" },
-      { "day": 2, "start": 1, "duration": 2,"cname":"高等数学@教A-301"},
-      { "day": 2, "start": 8, "duration": 2, "cname": "高等数学@教A-301" },
-      { "day": 3, "start": 4, "duration": 1, "cname": "高等数学@教A-301" },
-      { "day": 3, "start": 8, "duration": 1, "cname": "高等数学@教A-301" },
-      { "day": 3, "start": 5, "duration": 2, "cname": "高等数学@教A-301" },
-      { "day": 4, "start": 2, "duration": 3, "cname": "高等数学@教A-301" },
-      { "day": 4, "start": 8, "duration": 2, "cname": "高等数学@教A-301" },
-      { "day": 5, "start": 1, "duration": 2, "cname": "高等数学@教A-301" },
-      { "day": 6, "start": 3, "duration": 2, "cname": "高等数学@教A-301" },
-      { "day": 7, "start": 5, "duration": 3, "cname": "高等数学@教A-301" },     
+          
     ]
   },
 
@@ -26,7 +16,43 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.database().collection('sc').get({
+      success:(res)=>{
+        let bgs=res.data
+        console.log(res)
+        const that=this
+        for(let i=0;i<bgs.length;i++){
+          if(app.globalData.idnumber==bgs[i].sno)
+          {
+            console.log(bgs[i].sno)
+            var cname="";
+            wx.cloud.database().collection('course').get({
+              success:(ret)=>{
+                console.log(ret)
+                let cr=ret.data
+                for(let j=0;j<cr.length;j++){
+                  if(cr[j].cno==bgs[i].cno)
+                  {
+                    cname=cr[j].cname;
+                    break;
+                  }
+                }
+                var tmp={
+                  cname:cname,
+                  day:bgs[i].weekday,
+                  start:bgs[i].starttime,
+                  duration:bgs[i].duration
+                }
+                console.log(tmp)
+                this.setData({
+                  wlist:that.data.wlist.concat(tmp)
+                })
+              }
+            })
+          }
+        }
+        }
+    })
   },
 
   /**
