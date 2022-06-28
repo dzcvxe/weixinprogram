@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/authorize/authorize",
     "pages/index/index",
     "pages/grade/grade",
@@ -23,36 +23,40 @@
     "pages/submitgoods/submitgoods",
     "pages/goodsdetail/goodsdetail",
     "pages/buy/buy",
-    "pages/aboutus/aboutus"
+    "pages/aboutus/aboutus",
+    "pages/feedback/feedback",
+    "pages/myinformation/myinformation"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#33cccc",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "list": [{
-      "color":"#999",
-      "selectedColor":"#ff2d4a",
-      "backgroundColor":"#fafafa",
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "icons/home.png",
-      "selectedIconPath": "icons/home-o.png"
-    },
-    {
-      "pagePath": "pages/transaction/transaction",
-      "text": "二手交易",
-      "iconPath": "icons/cart_20190818_110336.png",
-      "selectedIconPath": "icons/cart-o.png"
-    },
-    {
-      "pagePath": "pages/user/user",
-      "text": "我的",
-      "iconPath": "icons/my.png",
-      "selectedIconPath": "icons/my-o.png"
-    }]
+    "list": [
+      {
+        "color": "#999",
+        "selectedColor": "#ff2d4a",
+        "backgroundColor": "#fafafa",
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-o.png"
+      },
+      {
+        "pagePath": "pages/transaction/transaction",
+        "text": "二手交易",
+        "iconPath": "icons/cart_20190818_110336.png",
+        "selectedIconPath": "icons/cart-o.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

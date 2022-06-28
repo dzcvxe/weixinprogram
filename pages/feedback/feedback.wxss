@@ -1,0 +1,79 @@
+/* pages/feedback/feedback.wxss */
+#aboutusView > image{
+  width: 670rpx;
+  height: 670rpx;
+  margin-bottom: 40rpx;
+}
+
+#aboutusView{
+  padding: 0 40rpx;
+}
+
+.aboutusItemView{
+  padding-bottom: 30rpx;
+}
+
+
+.aboutusItemView > view:nth-child(1){
+  font-size: 40rpx;
+  color: #87cefa;
+  padding-bottom: 20rpx;
+}
+
+.aboutusItemView > view:nth-child(2){
+  font-size: 30rpx;
+  color: #888;
+}
+.mine_user_container{
+  background-color: #FDEBE7;
+  height: 272rpx;
+  display: flex;
+  padding: 0 40rpx;
+}
+
+.no_userinfo{
+  width: 144rpx;
+  height: 144rpx;
+  background-color: violet;
+  border-radius: 50%;
+
+}
+.mine-userinfo-left{
+  margin: 0 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mine-nouserinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.mine-nouserinfo-msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mine-nouserinfo-avatar::after {
+  border: none;
+}
+
+.mine-userinfo{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.mine-userinfo-msg{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: -40rpx;
+}
+

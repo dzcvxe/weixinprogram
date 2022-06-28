@@ -1,0 +1,10 @@
+<!--pages/feedback/feedback.wxml-->
+<view id="aboutusView">
+  <text>\n</text> <text>\n</text> <text>\n</text> 
+  <image src="/icons/feedback1.jpg"></image>
+  <text>\n</text> <text>\n</text> <text>\n</text> 
+  <button open-type='feedback'  type="primary">意见反馈</button>
+
+
+
+</view>

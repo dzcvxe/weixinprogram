@@ -20,6 +20,7 @@ Page({
       success:(res)=>{
         let bgs=res.data
         console.log(res)
+        console.log(app.globalData.idnumber)
         const that=this
         for(let i=0;i<bgs.length;i++){
           if(app.globalData.idnumber==bgs[i].sno)
