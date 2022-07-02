@@ -1,25 +1,65 @@
 // pages/test/test.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    examList:[     
+    ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    
+    wx.cloud.database().collection('exam').get({
+      success:(res)=>{
+        let bgs=res.data
+        const that=this
+        console.log('bgs.length'+bgs.length)
+        for(let i=0;i<bgs.length;i++){
+          console.log('app.globalData.idnumber'+app.globalData.idnumber)
+          console.log('bgs[i].sno'+bgs[i].sno)
+          if(app.globalData.idnumber==bgs[i].sno)
+          {
+            var cname=""
+            var cnum=0
+            wx.cloud.database().collection('course').get({
+              success:(ret)=>{
+                let cr=ret.data
+                for(let j=0;j<cr.length;j++){
+                  if(cr[j].cno==bgs[i].cno)
+                  {
+                    cname=cr[j].cname;
+                    cnum=cr[j].cnum;
+                    break;
+                  }
+                }
+                var tmp={
+                  courseName:cname,
+                  credit:cnum,
+                  start:bgs[i].start,
+                  end:bgs[i].end,
+                  place:bgs[i].place
+                }
+                this.setData({
+                  examList:that.data.examList.concat(tmp)
+                })
+              }
+            })
+          }
+        }
+        }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**

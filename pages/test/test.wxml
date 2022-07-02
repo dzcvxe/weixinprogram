@@ -1,2 +1,34 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<!-- <text>pages/test/test.wxml</text> -->
+
+<!--pages/gradedetail/gradedetail.wxml-->
+<view class="overall">
+<text class="txt"></text>
+</view>
+<view class="table">
+  <view class="tr bg-l">
+    <view class="th1">课程</view>
+    <view class="th2">学分</view>
+    <view class="th1">开始时间</view>
+    <view class="th1">结束时间</view>
+    <view class="th3">地点</view>
+ </view>
+ <block wx:for="{{examList}}" wx:key="{[latest]}">
+  <view class="tr bg-d" wx:if="{{index % 2 == 0}}">
+    <view class="f">{{item.courseName}}</view>
+    <view class="s">{{item.credit}}</view>
+    <view class="f">{{item.start}}</view>
+    <view class="f">{{item.end}}</view>
+    <view class="t">{{item.place}}</view>
+  </view>
+  <view class="tr" wx:else>
+    <view class="f">{{item.courseName}}</view>
+    <view class="s">{{item.credit}}</view>
+    <view class="f">{{item.start}}</view>
+    <view class="f">{{item.end}}</view>
+    <view class="t">{{item.place}}</view>
+  </view>
+ </block>
+</view>
+<text class='bottom'>我也是有底线的~</text>
+<image src='/icons/aboutus.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
