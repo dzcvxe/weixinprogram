@@ -1,1 +1,9 @@
-/* pages/map/map.wxss */
+.mapFont {
+  font-size: 40rpx;
+  color: cadetblue;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
