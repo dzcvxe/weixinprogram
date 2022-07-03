@@ -1,15 +1,6 @@
 {
   "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "cloudfunctionRoot": "cloudf/",
-  "packOptions": {
-    "ignore": [
-      {
-        "value": ".eslintrc.js",
-        "type": "file"
-      }
-    ],
-    "include": []
-  },
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -30,8 +21,6 @@
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -50,12 +39,15 @@
     "useStaticServer": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "appid": "wx021cdf35682af68f",
-  "projectname": "pro",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "libVersion": "2.24.6",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wx021cdf35682af68f"
 }

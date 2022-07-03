@@ -30,5 +30,5 @@
   </view>
  </block>
 </view>
-<text class='bottom'>我也是有底线的~</text>
+<text class='bottom'>没有更多考试了~</text>
 <image src='/icons/aboutus.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
