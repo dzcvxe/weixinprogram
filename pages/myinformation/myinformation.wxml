@@ -23,10 +23,10 @@
       <text class='left'>系部：</text><text class='right'>{{myinfo.sdept}}</text>
     </view>
     <view class='item' bindtap='resetpwd'>
-     <text class='left'> 密码：</text><text class='right'>修改</text>
+     <text class='left'> 密码：</text><text class='right'>点击修改>>></text>
     </view>
     <view class='item' bindtap='exit'>
-      <text class='left'>退出：</text><text class='right'>>>></text>
+      <text class='left'>退出：</text><text class='right'>点击退出>>></text>
     </view>
   
 </view>
