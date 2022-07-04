@@ -25,7 +25,8 @@
     "pages/buy/buy",
     "pages/aboutus/aboutus",
     "pages/feedback/feedback",
-    "pages/myinformation/myinformation"
+    "pages/myinformation/myinformation",
+    "pages/password/password"
   ],
   "window": {
     "backgroundTextStyle": "light",

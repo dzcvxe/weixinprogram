@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    img: '',
+    name: '',
     // onPullDownRefresh: function () {
     //   wx.stopPullDownRefresh()
     // },
@@ -16,7 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      img:app.globalData.userIm.userInfo.avatarUrl,
+      name:app.globalData.userIm.userInfo.nickName
+    })
     //var stu = wx.getStorageSync('student');
     //var stu =wx.cloud.database().collection('student').get
     wx.cloud.database().collection('student').get({
@@ -57,10 +62,18 @@ Page({
     })
   },
 resetpwd:function(e){
-    var no=this.data.myinfo.no;
+    var sno=this.data.myinfo.sno;
+    console.log(sno)
+    if(this.data.idnumber=sno){
     wx.navigateTo({
-      url: '../password/password?no=' + no,
-    })
+      url: '../password/password?sno=' + sno,
+    })}
+    else{  
+      wx.showToast({
+      title: '数据库没有此学生！',
+      icon: 'none',
+      duration: 1000
+    })}
   },
   setemail: function (e) {
     var no = this.data.myinfo.no;
