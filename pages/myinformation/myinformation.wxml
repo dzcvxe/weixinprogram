@@ -1,10 +1,11 @@
 <view class='content'>
   <view class='nav'>
     <view class='top'>
-      <open-data type="userAvatarUrl"></open-data>
+      <image class="userinfo-avatar" src="{{img}}" mode="cover"></image>
+       
     </view>
     <view class='nickname'>
-      <open-data type="userNickName"></open-data> 
+      <text class="userinfo-nickname">{{name}}</text>
     </view>
   </view>
     <view class='item'>

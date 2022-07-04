@@ -1,25 +1,17 @@
 {
-<<<<<<< Updated upstream
-  "condition": {},
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "projectname": "weixinprogram-git",
-  "setting": {
-    "compileHotReLoad": true
-  }
-=======
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "main",
-          "pathName": "pages/index/index",
+          "name": "",
+          "pathName": "pages/update/update",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/password/password",
+          "pathName": "pages/feedback/feedback",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -28,5 +20,4 @@
     }
   },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
->>>>>>> Stashed changes
 }

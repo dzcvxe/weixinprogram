@@ -1,0 +1,20 @@
+
+<!-- 信息区域 -->
+<view id="aboutusView">
+  <image src="/icons/update.gif"></image>
+<view class="aboutusItemView">
+    <view>当前版本</view>
+    <view>{{version}}</view>
+  </view>
+<view class="aboutusItemView">
+    <view>是否需要更新</view>
+    <view>{{yn}}</view>
+  </view>
+  <text>\n</text>  <text>\n</text>
+  <view class="aboutusItemView" bindtap='check'>
+     <button type="primary">检查更新</button>
+  </view>
+
+</view>
+
+

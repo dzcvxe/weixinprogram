@@ -1,7 +1,8 @@
 #aboutusView > image{
+  margin-top: 50rpx;
   width: 670rpx;
-  height: 670rpx;
-  margin-bottom: 40rpx;
+  height: 536rpx;
+  margin-bottom: 50rpx;
 }
 
 #aboutusView{

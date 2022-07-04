@@ -1,8 +1,9 @@
 /* pages/feedback/feedback.wxss */
 #aboutusView > image{
+  margin-top: 50rpx;
   width: 670rpx;
   height: 670rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 200rpx;
 }
 
 #aboutusView{
