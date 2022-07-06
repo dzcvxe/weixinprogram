@@ -1,2 +1,41 @@
-<!--pages/comment/comment.wxml-->
-<text>pages/comment/comment.wxml</text>
+<!--pages/category/category.wxml-->
+<view class="container">
+  <scroll-view class='nav_left' scroll-y='true'>
+    <block wx:for="{{cateItems}}" wx:key="{{index}}">
+      <view class="nav_left_items {{curNav==item.cate_id?'active':''}}" bindtap="switchRightTab" data-index='{{index}}' data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+    </block>
+  </scroll-view>
+  <scroll-view class="nav_right" scroll-y="true">
+   <!-- <view wx:if="{{cateItems[curIndex].children.length>0}}">
+      <block wx:for="{{cateItems[curIndex].children}}" wx:key="{{index}}">
+        <view class="nav_right_items">
+          <navigator url="../../detail/detail">
+            <image src="{{item.image}}"></image>
+            <text>{{item.name}}</text>
+          </navigator>
+        </view>
+      </block>
+    </view>-->
+    <view>评价内容</view>
+    <view>当前评价课程为：{{curclass.cname}}</view>
+    <view>课程学分：{{curclass.cnum}}</view>
+    <view>课程性质:{{curclass.ctype}}</view>
+    <view>评价教师：{{tname}}</view>
+    <view>评价等级</view>
+    <view class='list-msg2' bindtap='bindShowMsg'>
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='/images/down.png'></image>
+    </view>
+    <view class="select_box" wx:if="{{select}}">
+        <view class="select_one" bindtap="mySelect" data-name="优">优</view>
+        <view class="select_one" bindtap="mySelect" data-name="良">良</view>
+        <view class="select_one" bindtap="mySelect" data-name="中">中</view>
+        <view class="select_one" bindtap="mySelect" data-name="差">差</view>
+    </view>
+    <view>你认为本课程还有哪些方面需要改进</view>
+    <view class="text_view">
+    <textarea placeholder="请填写评价内容 (不少于5个字)" auto-focus maxlength="200" auto-focus="{{false}}" bindinput="getInput"/>
+    </view>
+    <button type="primary" bindtap="subm">提交</button>
+  </scroll-view>
+</view>

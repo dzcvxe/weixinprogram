@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/authorize/authorize",
+    "pages/comment/comment",
     "pages/index/index",
     "pages/grade/grade",
     "pages/gradedetail/gradedetail",
@@ -12,7 +13,6 @@
     "pages/login/login",
     "pages/test/test",
     "pages/calendar/calendar",
-    "pages/comment/comment",
     "pages/map/map",
     "pages/search_/search_",
     "pages/register/register",

@@ -13,20 +13,50 @@
     <view class="categoryList" indicator-dots="true" 
     indicator-color="rgba(228,228,228,1)" 
     indicator-active-color="#FECA49">
-    <block wx:for="{{categoryList}}" wx:key="item">
-    <view>
-    <block wx:for="{{item}}" wx:key="item">
-      <view class="category-info">
-        <navigator url="{{item.url}}" open-type="navigate">
-          <view>
-            <image src="{{item.src}}" 
-            class="category-image"></image>
-            <view class="category-text">{{item.name}}</view>
+    <block wx:for="{{categoryList}}" wx:key="item" wx:if="{{type==1}}">
+      <view>
+        <block wx:for="{{item}}" wx:key="item">
+          <view class="category-info">
+            <navigator url="{{item.url}}" open-type="navigate">
+              <view>
+                <image src="{{item.src}}" 
+                class="category-image"></image>
+                <view class="category-text">{{item.name}}</view>
+              </view>
+            </navigator>
           </view>
-        </navigator>
+        </block>
       </view>
     </block>
-    </view>
+    <block wx:for="{{categoryList1}}" wx:key="item" wx:if="{{type==2}}">
+      <view>
+        <block wx:for="{{item}}" wx:key="item">
+          <view class="category-info">
+            <navigator url="{{item.url}}" open-type="navigate">
+              <view>
+                <image src="{{item.src}}" 
+                class="category-image"></image>
+                <view class="category-text">{{item.name}}</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:for="{{categoryList2}}" wx:key="item" wx:if="{{type==3}}">
+      <view>
+        <block wx:for="{{item}}" wx:key="item">
+          <view class="category-info">
+            <navigator url="{{item.url}}" open-type="navigate">
+              <view>
+                <image src="{{item.src}}" 
+                class="category-image"></image>
+                <view class="category-text">{{item.name}}</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
     </block>
     </view>
   </view>

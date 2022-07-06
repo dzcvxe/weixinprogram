@@ -36,6 +36,7 @@ Page({
     duration: 1000,       //滑动动画时长
     inputShowed: false,
     inputVal: "",
+    type:0,
     categoryList: {
     pageone: [{
       name: "成绩查询",
@@ -65,14 +66,80 @@ Page({
       name: "校历",
         src: "../../icons/calendar.png",
         url: "/pages/calendar/calendar"
-    }]}
+    }]
+  },
+  categoryList1: {
+    pageone: [{
+      name: "成绩管理",
+      src: "../../icons/grade.png",
+      url: "/pages/grade/grade"
+    }, {
+      name: "考试发布",
+      src: "../../icons/test.png",
+        url: "/pages/test/test"
+    }, {
+      name: "课表查询",
+        src: "../../icons/curriculum.png",
+        url: "/pages/curriculum/curriculum"
+    }, {
+      name: "教学评价",
+        src: "../../icons/comment.png",
+        url: "/pages/comment/comment"
+    }, {
+      name: "校园论坛",
+        src: "../../icons/forum.png",
+        url: "/pages/forum/forum"
+    }, {
+      name: "校园地图",
+        src: "../../icons/map.png",
+        url: "/pages/map/map"
+    }, {
+      name: "校历",
+        src: "../../icons/calendar.png",
+        url: "/pages/calendar/calendar"
+    }]
+  },
+  categoryList2: {
+    pageone: [{
+      name: "成绩管理",
+      src: "../../icons/grade.png",
+      url: "/pages/grade/grade"
+    }, {
+      name: "考试查询",
+      src: "../../icons/test.png",
+        url: "/pages/test/test"
+    }, {
+      name: "课表查询",
+        src: "../../icons/curriculum.png",
+        url: "/pages/curriculum/curriculum"
+    }, {
+      name: "教学评价",
+        src: "../../icons/comment.png",
+        url: "/pages/comment/comment"
+    }, {
+      name: "校园论坛",
+        src: "../../icons/forum.png",
+        url: "/pages/forum/forum"
+    }, {
+      name: "校园地图",
+        src: "../../icons/map.png",
+        url: "/pages/map/map"
+    }, {
+      name: "校历",
+        src: "../../icons/calendar.png",
+        url: "/pages/calendar/calendar"
+    }]
+  }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.idnumber)
+    console.log(app.globalData.type)
+    this.setData({
+      type:app.globalData.type
+    })
   },
 
   /**
