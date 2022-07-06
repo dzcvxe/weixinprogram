@@ -1,5 +1,5 @@
 <!--pages/map/map.wxml-->
 <view class="mapFont">本部地图</view>
-<image src="/picture/map_CY.jpg"></image>
+<image src="cloud://cloud1-6guew4bhd83120c1.636c-cloud1-6guew4bhd83120c1-1310827713/map_CY.jpg"></image>
 <view class="mapFont">通州校区地图</view>
-<image src="/picture/map_TZ.jpg"></image>
+<image src="cloud://cloud1-6guew4bhd83120c1.636c-cloud1-6guew4bhd83120c1-1310827713/map_TZ.jpg"></image>
