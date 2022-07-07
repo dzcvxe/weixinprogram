@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    let promise =new Promise(function(resolve, reject) {
+    // let promise =new Promise(function(resolve, reject) {
     wx.cloud.database().collection('exam').get({
       success:(res)=>{
         let bgs=res.data
@@ -50,25 +50,18 @@ Page({
             })
           }
         }
-        // examList.sort(this.compare(time))
-        // compare: function (){
-        //   return function(a,b){
-        //     var v1=a.startExam;
-        //     var v2=b.startExam;
-        //     return v1-v2;
-        //   }
-        // }
+        
         resolve(this.data.examList);
         }
-    })
+    // })
   });
-  promise.then(function(value) {
-    examList.sort(function(a,b){
-      return a.time-b.time;
-    })
-    console.log(examList);
-  }
-  )
+  // promise.then(function(value) {
+  //   examList.sort(function(a,b){
+  //     return a.time-b.time;
+  //   })
+  //   console.log(examList);
+  // }
+  // )
   },
 
   /**

@@ -1,5 +1,5 @@
 <!--pages/transaction/transaction.wxml-->
-<search></search>
+<!-- <search></search> -->
 <view class="outter">
     <view class="litem" data-num="1" bindtap="func">
         <image src="/icons/others.png" class="innerimg"/>
