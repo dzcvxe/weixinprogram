@@ -8,6 +8,9 @@ Page({
   data: {
     year:0,
     term:0,
+    totnum:0,
+    totgrade:0,
+    ave:0,
     introduction:"",
     scoreList:[
       
@@ -17,7 +20,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     this.setData({
       year:options.year,
       term:options.term
@@ -25,7 +27,6 @@ Page({
     wx.cloud.database().collection('sc').get({
       success:(res)=>{
         let bgs=res.data
-        console.log(res)
         const that=this
         for(let i=0;i<bgs.length;i++){
           if(app.globalData.idnumber==bgs[i].sno&&(bgs[i].year==options.year||options.year=="0")&&(bgs[i].term==options.term||options.term=="0"))
@@ -41,6 +42,10 @@ Page({
                   {
                     cname=cr[j].cname;
                     cnum=cr[j].cnum;
+                    this.data.totnum+=cnum;
+                    this.data.totgrade+=cnum*bgs[i].grade;
+                    console.log(bgs[i].grade*cnum)
+                    console.log(this.data.totnum, this.data.totgrade,"zxzxzxzx")
                     break;
                   }
                 }

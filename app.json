@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/authorize/authorize",
-    "pages/comment/comment",
     "pages/index/index",
+    "pages/comment/comment",
     "pages/grade/grade",
     "pages/gradedetail/gradedetail",
     "pages/transaction/transaction",
@@ -27,7 +27,9 @@
     "pages/feedback/feedback",
     "pages/myinformation/myinformation",
     "pages/password/password",
-    "pages/update/update"
+    "pages/update/update",
+    "pages/myblog/myblog",
+    "pages/mygoods/mygoods"
   ],
   "window": {
     "backgroundTextStyle": "light",

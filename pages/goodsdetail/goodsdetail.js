@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    realname:"",
     id0:"",
     detail:[],
     imgUrl:[],
@@ -62,13 +63,32 @@ Page({
       url: '/pages/buy/buy',
     })
   },
+  del:function(e){
+    const db = wx.cloud.database()
+      db.collection('goods').doc(this.data.id0).remove({
+        success: res => {
+          wx.showToast({
+            title: '删除成功',
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '删除失败',
+          })
+          console.error('[数据库] [删除记录] 失败：', err)
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("????????????????")
     this.setData({
       id0:options.id
+    })
+    this.setData({
+      realname:app.globalData.userIm.userInfo.nickName
     })
     wx.cloud.database().collection('goods').get({
       success:(res)=>{

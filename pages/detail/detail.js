@@ -7,6 +7,7 @@ Page({
    */
   data: {
     id0:"",
+    realname:"",
     detail:[],
     clicktimes:0,
     imgUrl:[],
@@ -37,6 +38,23 @@ Page({
       }
     })
   },
+  del:function(e){
+    const db = wx.cloud.database()
+      db.collection('blogs').doc(this.data.id0).remove({
+        success: res => {
+          wx.showToast({
+            title: '删除成功',
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '删除失败',
+          })
+          console.error('[数据库] [删除记录] 失败：', err)
+        }
+      })
+  },
   upload:function(e){
     const _ = wx.cloud.database().command
     wx.cloud.database().collection('blogs').doc(this.data.id0).update({
@@ -66,6 +84,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       id0:options.id
+    })
+    this.setData({
+      realname:app.globalData.userIm.userInfo.nickName
     })
     wx.cloud.database().collection('blogs').get({
       success:(res)=>{

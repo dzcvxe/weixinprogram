@@ -21,8 +21,8 @@
 </view>
 <view class="info-title">
   <text>{{goods_info.goods_title}}</text>
+  <button style="background-color: red;width: 250rpx;height:75rpx;text-align: center;margin-left: 450rpx;font-size: 30rpx;" wx:if="{{realname==detail[0].nickname}}" bindtap="del">删除物品</button>
 </view>
-
 <view style="border-top:1px solid #F6F6F6;background: #fff; padding:5px 15px;">
   <view class="clearfix flex grey gridXt">
     <text class="sub">

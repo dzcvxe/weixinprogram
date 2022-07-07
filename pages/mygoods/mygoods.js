@@ -68,37 +68,35 @@ Page({
       })
     }
   },
+  del:function(e){
 
+  },
   //获取文章列表数据
   getData: function() {
-    wx.cloud.database().collection('blogs').get({
+    wx.cloud.database().collection('goods').get({
       success:(res)=>{
         let bgs=res.data
         const that=this
         for(let i=0;i<bgs.length;i++){
-          if(bgs[i].clicktimes>=50){
-            wx.cloud.database().collection('blogs').doc(bgs[i]._id).update({
-              data: {
-                hot:true
-              }
-            })
-          }
-          this.setData({
-            postsList:that.data.postsList.concat(bgs[i])
-          })
-          this.setData({
-            allList:that.data.allList.concat(bgs[i])
-          })
-          if(bgs[i].hot==true)
-          {
+          if(app.globalData.userIm.userInfo.nickName==bgs[i].nickname){
             this.setData({
-              tmpList:that.data.tmpList.concat(bgs[i])
+              postsList:that.data.postsList.concat(bgs[i])
             })
+            this.setData({
+              allList:that.data.allList.concat(bgs[i])
+            })
+            if(bgs[i].hot==true)
+            {
+              this.setData({
+                tmpList:that.data.tmpList.concat(bgs[i])
+              })
+            }
           }
         }
         this.setData({
           postsList:this.data.postsList.reverse()
         })
+        console.log(this.data.postsList)
       }
     })
   },

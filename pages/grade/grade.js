@@ -23,7 +23,6 @@ Page({
         var fl=0;
         for(let i=0;i<bgs.length;i++){
           if(app.globalData.idnumber==bgs[i].sno){
-            console.log("ststststststsu")
             fl=1;
           }
         }
@@ -32,7 +31,7 @@ Page({
           wx.showToast({
             title: '未找到学生资料',
             icon: 'none',
-            duration: 2000//持续的时间
+            duration: 2000
           })
         }
         else{

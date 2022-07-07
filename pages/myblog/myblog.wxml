@@ -1,0 +1,42 @@
+<!--pages/myblog/myblog.wxml-->
+<scroll-view class="scroll-posts-list"  scroll-y="true" style="height:100%"  bindscrolltolower="lower">
+  <view class="postslist">
+    <block wx:for="{{postsList}}"  wx:key="">
+      <view class="posts-list">
+        <navigator url="/pages/detail/detail?id={{item._id}}">
+          <view class="posts-list-info" index="{{index}}">
+              <image class="userimg" src="{{item.headurl}}" />
+              <view class="item-box">
+                <view class="userinfo">
+                  <text class="username">{{item.nickname}}</text>
+                  <text class="time">{{item.time}}</text>
+                </view>
+                <view class="posts-title">
+                  <view class="posts-tag" wx:if="{{item.hot === true}}">热门</view>
+                  <text>{{item.title}}</text>
+                </view>
+              </view>
+          </view>
+          <view class="bar-info">
+            <view class="bar-info-item">
+              <image class="bar-info-item-icon" src="/icons/commenttimes.png"></image>
+              <view class="bar-info-item-number" wx:if="{{item.replies.length>0}}">{{item.replies.length}}</view>
+              <view class="bar-info-item-number" wx:else>0</view>
+            </view>
+            <view class="bar-info-item">
+              <image class="bar-info-item-icon" src="/icons/visit.png"></image>
+              <view class="bar-info-item-number">{{item.clicktimes}}</view>
+            </view>
+
+            <view class="bar-info-item2"  wx:if="{{item.tab === 'hot'}}">
+              <view class="bar-info-item-number">热门</view>
+            </view>
+            <view class="bar-info-item2"  wx:if="{{item.tab === 'put'}}">
+              <view class="bar-info-item-number">发帖</view>
+            </view>
+          </view>
+      </navigator>
+      </view>
+    </block>
+  </view>
+</scroll-view>

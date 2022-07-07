@@ -13,6 +13,8 @@ Page({
     name: '',
     menuitems: [
       { text: '我的信息', url: '../myinformation/myinformation', icon: '/icons/myinfo.png', tips: '' },
+      { text: '我的帖子', url: '../myblog/myblog', icon: '/icons/blog.png', tips: '' },
+      { text: '我的物品', url: '../mygoods/mygoods', icon: '/icons/goods.png', tips: '' },
       { text: '关于我们', url: '../aboutus/aboutus', icon: '/icons/aboutus.png', tips: '' },
       { text: '意见反馈', url: '../feedback/feedback', icon: '/icons/feedback.png', tips: '' },
       { text: '检查更新', url: '../update/update', icon: '/icons/update.png', tips: '' }

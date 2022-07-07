@@ -1,6 +1,6 @@
 <!--pages/gradedetail/gradedetail.wxml-->
 <view class="overall">
-<text class="txt"></text>
+<text class="txt">您共修{{totnum}}学分，加权成绩为{{totgrade}}</text>
 </view>
 <view class="table">
   <view class="tr bg-l">
