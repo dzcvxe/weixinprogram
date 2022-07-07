@@ -8,7 +8,6 @@
     "pages/transaction/transaction",
     "pages/forum/forum",
     "pages/curriculum/curriculum",
-    "pages/choosetype/choosetype",
     "pages/user/user",
     "pages/login/login",
     "pages/test/test",

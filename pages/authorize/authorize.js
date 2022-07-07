@@ -44,7 +44,7 @@ Page({
             console.log(res)
             app.globalData.userIm=res
             wx.redirectTo({
-              url: '/pages/choosetype/choosetype',
+              url: '/pages/login/login',
             })
         }
       })

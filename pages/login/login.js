@@ -62,8 +62,6 @@ Page({
         success:(res)=>{
           let admin=res.data
           for (let i = 0; i < admin.length; i++) {  
-            if(app.globalData.type!=admin[i].type)
-              continue;
             if (username === admin[i].idnumber) {
               flag=true;
               if (password !== admin[i].password) {  

@@ -8,7 +8,6 @@ Page({
    */
   data: {
     examList:[ 
-      
     ]
   },
   /**
@@ -20,24 +19,17 @@ Page({
       success:(res)=>{
         let bgs=res.data
         const that=this
-        console.log('bgs.length'+bgs.length)
         for(let i=0;i<bgs.length;i++){
-          console.log('app.globalData.idnumber'+app.globalData.idnumber)
-          console.log('bgs[i].sno'+bgs[i].sno+" i===="+i)
           if(app.globalData.idnumber==bgs[i].sno)
           {
             var cname=""
             var cnum=0
             wx.cloud.database().collection('course').get({
-              
               success:(ret)=>{
                 let cr=ret.data
                 for(let j=0;j<cr.length;j++){
-                  console.log('cr[j].cno:'+cr[j].cno)
-                  console.log('bgs[i].cno:'+bgs[i].cno+" i="+i)
                   if(cr[j].cno==bgs[i].cno)
                   {
-                    console.log('cr[j].cname'+cr[j].cname+"  j="+j)
                     cname=cr[j].cname;
                     cnum=cr[j].cnum;
                     break;
@@ -53,13 +45,11 @@ Page({
                 }
                 this.setData({
                   examList:that.data.examList.concat(tmp)
-                })
-                
+                })    
               }
             })
           }
         }
-        
         // examList.sort(this.compare(time))
         // compare: function (){
         //   return function(a,b){
@@ -68,11 +58,11 @@ Page({
         //     return v1-v2;
         //   }
         // }
+        resolve(this.data.examList);
         }
     })
-    
   });
-  promise.then(function() {
+  promise.then(function(value) {
     examList.sort(function(a,b){
       return a.time-b.time;
     })
