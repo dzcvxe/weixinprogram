@@ -95,4 +95,12 @@
   right: 50rpx;
   border-radius: 50%;
 }
-
+.txt{
+  font-size: 40rpx;
+  font-weight: bold;
+  background: linear-gradient(to right, #1ae8c8, #4a8aff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}

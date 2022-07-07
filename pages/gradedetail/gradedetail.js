@@ -42,10 +42,10 @@ Page({
                   {
                     cname=cr[j].cname;
                     cnum=cr[j].cnum;
-                    this.data.totnum+=cnum;
-                    this.data.totgrade+=cnum*bgs[i].grade;
-                    console.log(bgs[i].grade*cnum)
-                    console.log(this.data.totnum, this.data.totgrade,"zxzxzxzx")
+                    this.setData({
+                      totnum:this.data.totnum+cnum,
+                      totgrade:this.data.totgrade+cnum*bgs[i].grade
+                    })
                     break;
                   }
                 }
@@ -59,6 +59,7 @@ Page({
                 })
               }
             })
+
           }
         }
         }

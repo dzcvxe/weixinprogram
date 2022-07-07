@@ -1,6 +1,7 @@
 <!--pages/gradedetail/gradedetail.wxml-->
+<wxs module="filters" src="/utils/addmul.wxs"></wxs>
 <view class="overall">
-<text class="txt">您共修{{totnum}}学分，加权成绩为{{totgrade}}</text>
+<text class="txt">您共修{{totnum}}学分，加权成绩为{{filters.toFix2(1.0*totgrade/totnum)}}</text>
 </view>
 <view class="table">
   <view class="tr bg-l">
