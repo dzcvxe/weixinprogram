@@ -1,4 +1,5 @@
 const app = getApp()
+
  let username=''
  let password=''
  let cnt=0
@@ -11,6 +12,15 @@ Page({
   },
   onShow: function () {
     console.log(app.globalData.type)  
+ 
+
+if (wx.canIUse('hideHomeButton')) {
+
+wx.hideHomeButton()
+
+}
+
+
   },
   switch() {
     this.setData({

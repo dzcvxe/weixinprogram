@@ -52,7 +52,7 @@ Page({
           // console.log('用户点击确定')
           wx.removeStorageSync('student');
           //页面跳转
-          wx.redirectTo({
+          wx.reLaunch({
             url: '../login/login',
           })
         } else if (res.cancel) {
